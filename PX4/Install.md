@@ -1,5 +1,4 @@
 # Installing PX4 Development Environment
----
 
 ## 1. Git
 Before installing PX4 development environment, you need to install [git](https://git-scm.com/). Open terminal and write
@@ -20,8 +19,6 @@ When installation is completed you can check using:
 This will show version of installed git.
 
 ![git version](../Images/PX4/Install/git_check_version.png)
-
-***
 
 ## 2. Download source code
 
@@ -101,8 +98,6 @@ Next, download submodules
 ![install submodules](../Images/PX4/Install/download_submodules.png)
 
 Now source code is download.
-
-***
 
 ## 3. Installing ROS Melodic and Gazebo
 PX4 provides a script to download ROS Melodic and Gazebo.
