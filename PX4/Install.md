@@ -100,7 +100,13 @@ Next, download submodules
 Now source code is download.
 
 ## 3. Installing ROS Melodic and Gazebo
-PX4 provides a script to download ROS Melodic and Gazebo.
+PX4 provides a script to download required tools using.
+
+        bash Tools/setup/ubuntu.sh
+
+![PX4 install requirements](../Images/PX4/Install/install_px4_requirements.png)
+
+it also provides another script to download ROS Melodic and Gazebo.
 
         wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_melodic.sh
         bash ubuntu_sim_ros_melodic.sh
