@@ -3,7 +3,7 @@
 ## 1. Git
 Before installing PX4 development environment, you need to install [git](https://git-scm.com/). Open terminal and write
 
-        sudo apt install git
+    sudo apt install git
 
 ![git install command](../Images/PX4/Install/install_git_command.png)
 
@@ -14,7 +14,7 @@ Terminal asks for user confirmation to install required packages. Write "y" and 
 
 When installation is completed you can check using:
 
-        git --version
+    git --version
 
 This will show version of installed git.
 
@@ -76,7 +76,7 @@ don't forget to commit changes.
 
 Now, you are ready to download your forked PX4 repository.
 
-        git clone https://github.com/<username>/PX4-Autopilot.git
+    git clone https://github.com/<username>/PX4-Autopilot.git
 
 ![clone px4 repo](../Images/PX4/Install/git_clone_px4.png)
 
@@ -86,14 +86,14 @@ It will take some time to download (depending on your internet connection).
 
 Next, you need to download submodules. But first you need to change branch to created one.
 
-        cd PX4-Autopilot
-        git checkout <branch_name>
+    cd PX4-Autopilot
+    git checkout <branch_name>
 
 ![change branch](../Images/PX4/Install/px4_change_branch.png)
 
 Next, download submodules
 
-        git submodule update --init --recursive
+    git submodule update --init --recursive
 
 ![install submodules](../Images/PX4/Install/download_submodules.png)
 
@@ -102,14 +102,14 @@ Now source code is download.
 ## 3. Installing ROS Melodic and Gazebo
 PX4 provides a script to download required tools using.
 
-        bash Tools/setup/ubuntu.sh
+    bash Tools/setup/ubuntu.sh
 
 ![PX4 install requirements](../Images/PX4/Install/install_px4_requirements.png)
 
 it also provides another script to download ROS Melodic and Gazebo.
 
-        wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_melodic.sh
-        bash ubuntu_sim_ros_melodic.sh
+    wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_melodic.sh
+    bash ubuntu_sim_ros_melodic.sh
 
 ![install ROS and Gazebo](../Images/PX4/Install/install_ros_gazebo.png)
 
@@ -119,15 +119,15 @@ It will take time to download (depending on your internet connection). It can gi
 
 This happens because some ROS packages are missing. To solve this solution use this command to downlaod required packages:
 
-        cd ~/catkin_ws
-        sudo rosdep init
-        rosdep update
+    cd ~/catkin_ws
+    sudo rosdep init
+    rosdep update
 
 ![ROS dependencies install](../Images/PX4/Install/rosdep_init_install.png)
 
 Now, try to build ROS packages again using (**be careful** when building mavros package it takes a lot of processing so try when you run next command to close every opened window and leave terminal only).
 
-        catkin build
+    catkin build
 
 If error appears again (because missing package is not listed in dependencies list). Look in error message and find missing package and try to install it manually, or even some python packages are missing.
 
@@ -137,11 +137,11 @@ If error appears again (because missing package is not listed in dependencies li
 
 Install ROS package by using
 
-        sudo apt-get install ros-melodic-<package_name>
+    sudo apt-get install ros-melodic-<package_name>
 
 Or installing python package by using
 
-        pip install <package_name>
+    pip install <package_name>
 
 ![ROS install package](../Images/PX4/Install/ros_install_package_manually.png)
 
@@ -151,7 +151,7 @@ Another possible problem is:
 
 you need to download `Geographic_Lib` using
 
-        sudo apt-get install libgeographic-dev
+    sudo apt-get install libgeographic-dev
 
 Build ROS workspace again until it builds successfully.
 
