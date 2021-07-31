@@ -52,8 +52,6 @@ This is done by passing additional argument for launch command.
 
     roslaunch px4 mavros_posix_sitl.launch vehicle:=<vehicle_name> world:=<world_name>
 
-![Default Arguments](../Images/PX4/Run/launch_file_default_args.png)
-
 ![Plane Vehicle command](../Images/PX4/Run/sitl_gazebo_vehicle_plane.png)
 
 ![Gazebo Plane](../Images/PX4/Run/gazebo_plane.png)
