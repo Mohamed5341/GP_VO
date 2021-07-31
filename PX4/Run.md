@@ -4,12 +4,12 @@ Before you run PX4 with Gazebo and ROS you need first to install [PX4](Install.m
 
 [PX4](https://docs.px4.io/master/en/simulation/ros_interface.html) mentioned how to run PX4 with Gazebo and ROS. First you need to run some commands in terminal.
 
-        cd PX4-Autopilot
-        DONT_RUN=1 make px4_sitl_default gazebo
-        source ~/catkin_ws/devel/setup.bash    # (optional)
-        source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default
-        export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)
-        export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/sitl_gazebo
+    cd PX4-Autopilot
+    DONT_RUN=1 make px4_sitl_default gazebo
+    source ~/catkin_ws/devel/setup.bash    # (optional)
+    source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default
+    export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)
+    export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/sitl_gazebo
 
 These lines setup PX4 directory as ROS package so you can run nodes and launch files in it. Or instead of writing all these lines one at a time, you can write a script that contains these lines and just run this [script](../src/bash/setup_ros_pack.bash). First you need to copy it to `PX4-Autopilot`. Then you need to allow executing this script. Right click on script then select **Properties**
 
@@ -21,12 +21,12 @@ From **Permission** tab select **Allow executing file as program**
 
 Now, you can run this script by using.
 
-        cd PX4-Autopilot
-        source setup_ros_pack.bash
+    cd PX4-Autopilot
+    source setup_ros_pack.bash
 
 For first time running these commands it will take some time because building process, but next times you run it, it will not take too much time. This could give some error because of missing python packages. Now you can run Gazebo simulator using:
 
-        roslaunch px4 posix_sitl.launch
+    roslaunch px4 posix_sitl.launch
 
 ![Run Gazebo with iris](../Images/PX4/Run/gazebo_iris_run_command.png)
 
