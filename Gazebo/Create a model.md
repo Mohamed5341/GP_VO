@@ -23,60 +23,60 @@ Here is an example of creating a model of a car. First, create a folder called `
 
 Then in configuration file write:
 
-    ```XML
-    <?xml version="1.0"?>
-    <model>
-      <name>car</name>
-      <sdf version='1.6'>car.sdf</sdf>
-    
-      <author>
-       <name>Mohamed Ashraf</name>
-      </author>
-    
-      <description>
-        This is a model of a car.
-      </description>
-    </model>
-    ```
+```XML
+<?xml version="1.0"?>
+<model>
+  <name>car</name>
+  <sdf version='1.6'>car.sdf</sdf>
+
+  <author>
+   <name>Mohamed Ashraf</name>
+  </author>
+
+  <description>
+    This is a model of a car.
+  </description>
+</model>
+```
 
 Lets break this into lines
 
-    ```XML
-    <?xml version="1.0"?>
-    ```
+```XML
+<?xml version="1.0"?>
+```
 
 It just specify version of XML.
 
 
-    ```XML
-    <model>
-      ...
-    </model>
-    ```
+```XML
+<model>
+  ...
+</model>
+```
 
 We write all details about model in model tag.
 
-    ```XML
-    <name>car</name>
-    ```
+```XML
+<name>car</name>
+```
 
 Name tag contains the name of the model which is car.
 
-    ```XML
-    <sdf version='1.6'>car.sdf</sdf>
-    ```
+```XML
+<sdf version='1.6'>car.sdf</sdf>
+```
 
 Next we specify SDF file using its name, and specify SDF version which is 1.6. Check [Gazebo](http://gazebosim.org/tutorials?tut=install_dependencies_from_source#Versions) for more information about SDF versions. But here we use Gazebo 9 so 1.6 or earlier is good.
 
-    ```XML
-    <author>
-     <name>Mohamed Ashraf</name>
-    </author>
-    
-    <description>
-      This is a model of a car.
-    </description>
-    ```
+```XML
+<author>
+ <name>Mohamed Ashraf</name>
+</author>
+
+<description>
+  This is a model of a car.
+</description>
+```
 
 Author tag contains information about author of model like name, email. Description contains a small description about model.
 
@@ -90,311 +90,311 @@ In SDF file it contains some defined XML tags that are used to describe shape an
 
 Here is the whole file.
 
-    ```XML
-    <?xml version='1.0'?>
-    <sdf version="1.6">
-      <model name="car">
-        <pose>0 0 1 0 0 0</pose>
-        <static>false</static>
-    
-        <link name="main">
-          
-          <pose>0 0 0 0 0 0</pose>
-          
-          <inertial>
-            <mass>1.0</mass>
-            <inertia>
-              <ixx>0.03</ixx>
-              <ixy>0.0</ixy>
-              <ixz>0.0</ixz>
-              <iyy>0.03</iyy>
-              <iyz>0.0</iyz>
-              <izz>0.03</izz>
-            </inertia>
-          </inertial>
-    
-          <collision name="collision">
-            <geometry>
-              <box>
-                <size>1 1 1</size>
-              </box>
-            </geometry>
-          </collision>
-          
-          <visual name="visual">
-            
-            <geometry>
-              <box>
-                <size>1 1 1</size>
-              </box>
-            </geometry>
-            
-            <material>
-              <ambient>0.2 0 0 1</ambient>
-            </material>
-          </visual>
-        
-        </link>
-        
-        <link name="front">
-          
-          <pose>0.75 0 -0.25 0 0 0</pose>
-          
-          <inertial>
-            <mass>.25</mass>
-            <inertia>
-              <ixx>0.015</ixx>
-              <ixy>0.0</ixy>
-              <ixz>0.0</ixz>
-              <iyy>0.015</iyy>
-              <iyz>0.0</iyz>
-              <izz>0.015</izz>
-            </inertia>
-          </inertial>
-    
-          <collision name="collision">
-            <geometry>
-              <box>
-                <size>0.5 1 0.5</size>
-              </box>
-            </geometry>
-          </collision>
-          
-          <visual name="visual">
-            
-            <geometry>
-              <box>
-                <size>0.5 1 0.5</size>
-              </box>
-            </geometry>
-            
-            <material>
-              <ambient>0.2 0 0 1</ambient>
-            </material>
-          </visual>
-        
-        </link>
-        
-        <link name="frwheel">
-          
-          <pose>0.75 -0.575 -0.5 -1.570791 0 0</pose>
-          
-          <inertial>
-            <mass>.2</mass>
-            <inertia>
-              <ixx>0.01</ixx>
-              <ixy>0.0</ixy>
-              <ixz>0.0</ixz>
-              <iyy>0.01</iyy>
-              <iyz>0.0</iyz>
-              <izz>0.01</izz>
-            </inertia>
-          </inertial>
-    
-          <collision name="collision">
-            <geometry>
-              <cylinder>
-                <radius>0.25</radius>
-                <length>0.15</length>
-              </cylinder>
-            </geometry>
-          </collision>
-          
-          <visual name="visual">
-            
-            <geometry>
-              <cylinder>
-                <radius>0.25</radius>
-                <length>0.15</length>
-              </cylinder>
-            </geometry>
-            
-            <material>
-              <ambient>0 0 0.2 1</ambient>
-            </material>
-          </visual>
-        
-        </link>
-        
-        <link name="brwheel">
-          
-          <pose>-0.25 -0.575 -0.5 -1.570791 0 0</pose>
-          
-          <inertial>
-            <mass>.2</mass>
-            <inertia>
-              <ixx>0.01</ixx>
-              <ixy>0.0</ixy>
-              <ixz>0.0</ixz>
-              <iyy>0.01</iyy>
-              <iyz>0.0</iyz>
-              <izz>0.01</izz>
-            </inertia>
-          </inertial>
-    
-          <collision name="collision">
-            <geometry>
-              <cylinder>
-                <radius>0.25</radius>
-                <length>0.15</length>
-              </cylinder>
-            </geometry>
-          </collision>
-          
-          <visual name="visual">
-            
-            <geometry>
-              <cylinder>
-                <radius>0.25</radius>
-                <length>0.15</length>
-              </cylinder>
-            </geometry>
-            
-            <material>
-              <ambient>0 0 0.2 1</ambient>
-            </material>
-          </visual>
-        
-        </link>
-        
-        <link name="flwheel">
-          
-          <pose>0.75 0.575 -0.5 1.570791 0 0</pose>
-          
-          <inertial>
-            <mass>.2</mass>
-            <inertia>
-              <ixx>0.01</ixx>
-              <ixy>0.0</ixy>
-              <ixz>0.0</ixz>
-              <iyy>0.01</iyy>
-              <iyz>0.0</iyz>
-              <izz>0.01</izz>
-            </inertia>
-          </inertial>
-    
-          <collision name="collision">
-            <geometry>
-              <cylinder>
-                <radius>0.25</radius>
-                <length>0.15</length>
-              </cylinder>
-            </geometry>
-          </collision>
-          
-          <visual name="visual">
-            
-            <geometry>
-              <cylinder>
-                <radius>0.25</radius>
-                <length>0.15</length>
-              </cylinder>
-            </geometry>
-            
-            <material>
-              <ambient>0 0 0.2 1</ambient>
-            </material>
-          </visual>
-        
-        </link>
-        
-        <link name="blwheel">
-          
-          <pose>-0.25 0.575 -0.5 1.570791 0 0</pose>
-          
-          <inertial>
-            <mass>.2</mass>
-            <inertia>
-              <ixx>0.01</ixx>
-              <ixy>0.0</ixy>
-              <ixz>0.0</ixz>
-              <iyy>0.01</iyy>
-              <iyz>0.0</iyz>
-              <izz>0.01</izz>
-            </inertia>
-          </inertial>
-    
-          <collision name="collision">
-            <geometry>
-              <cylinder>
-                <radius>0.25</radius>
-                <length>0.15</length>
-              </cylinder>
-            </geometry>
-          </collision>
-          
-          <visual name="visual">
-            
-            <geometry>
-              <cylinder>
-                <radius>0.25</radius>
-                <length>0.15</length>
-              </cylinder>
-            </geometry>
-            
-            <material>
-              <ambient>0 0 0.2 1</ambient>
-            </material>
-          </visual>
-        
-        </link>
-        
-        <joint name="joint_2_boxes" type="fixed">
-          <parent>main</parent>
-          <child>front</child>
-        </joint>
-        
-        
-        <joint name="joint_frwheel" type="revolute">
-          <pose>0.75 -0.575 -0.5 0 0 0</pose>
-          <parent>front</parent>
-          <child>frwheel</child>
-          <axis>
-            <xyz>0 1 0</xyz>
-          </axis>
-        </joint>
-        
-        <joint name="joint_flwheel" type="revolute">
-          <pose>0.75 0.575 -0.5 0 0 0</pose>
-          <parent>front</parent>
-          <child>flwheel</child>
-          <axis>
-            <xyz>0 1 0</xyz>
-          </axis>
-        </joint>
-        
-        
-        <joint name="joint_brwheel" type="revolute">
-          <pose>-0.25 -0.575 -0.5 0 0 0</pose>
-          <parent>main</parent>
-          <child>brwheel</child>
-          <axis>
-            <xyz>0 1 0</xyz>
-          </axis>
-        </joint>
-        
-        <joint name="joint_blwheel" type="revolute">
-          <pose>-0.25 0.575 -0.5 0 0 0</pose>
-          <parent>main</parent>
-          <child>blwheel</child>
-          <axis>
-            <xyz>0 1 0</xyz>
-          </axis>
-        </joint>
-    
-      </model>
-    </sdf>
-    ```
+```XML
+<?xml version='1.0'?>
+<sdf version="1.6">
+  <model name="car">
+    <pose>0 0 1 0 0 0</pose>
+    <static>false</static>
+
+    <link name="main">
+
+      <pose>0 0 0 0 0 0</pose>
+
+      <inertial>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>0.03</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.03</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.03</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>1 1 1</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+
+        <geometry>
+          <box>
+            <size>1 1 1</size>
+          </box>
+        </geometry>
+
+        <material>
+          <ambient>0.2 0 0 1</ambient>
+        </material>
+      </visual>
+
+    </link>
+
+    <link name="front">
+
+      <pose>0.75 0 -0.25 0 0 0</pose>
+
+      <inertial>
+        <mass>.25</mass>
+        <inertia>
+          <ixx>0.015</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.015</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.015</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.5 1 0.5</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+
+        <geometry>
+          <box>
+            <size>0.5 1 0.5</size>
+          </box>
+        </geometry>
+
+        <material>
+          <ambient>0.2 0 0 1</ambient>
+        </material>
+      </visual>
+
+    </link>
+
+    <link name="frwheel">
+
+      <pose>0.75 -0.575 -0.5 -1.570791 0 0</pose>
+
+      <inertial>
+        <mass>.2</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+
+        <material>
+          <ambient>0 0 0.2 1</ambient>
+        </material>
+      </visual>
+
+    </link>
+
+    <link name="brwheel">
+
+      <pose>-0.25 -0.575 -0.5 -1.570791 0 0</pose>
+
+      <inertial>
+        <mass>.2</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+
+        <material>
+          <ambient>0 0 0.2 1</ambient>
+        </material>
+      </visual>
+
+    </link>
+
+    <link name="flwheel">
+
+      <pose>0.75 0.575 -0.5 1.570791 0 0</pose>
+
+      <inertial>
+        <mass>.2</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+
+        <material>
+          <ambient>0 0 0.2 1</ambient>
+        </material>
+      </visual>
+
+    </link>
+
+    <link name="blwheel">
+
+      <pose>-0.25 0.575 -0.5 1.570791 0 0</pose>
+
+      <inertial>
+        <mass>.2</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+
+        <material>
+          <ambient>0 0 0.2 1</ambient>
+        </material>
+      </visual>
+
+    </link>
+
+    <joint name="joint_2_boxes" type="fixed">
+      <parent>main</parent>
+      <child>front</child>
+    </joint>
+
+
+    <joint name="joint_frwheel" type="revolute">
+      <pose>0.75 -0.575 -0.5 0 0 0</pose>
+      <parent>front</parent>
+      <child>frwheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="joint_flwheel" type="revolute">
+      <pose>0.75 0.575 -0.5 0 0 0</pose>
+      <parent>front</parent>
+      <child>flwheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+
+    <joint name="joint_brwheel" type="revolute">
+      <pose>-0.25 -0.575 -0.5 0 0 0</pose>
+      <parent>main</parent>
+      <child>brwheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="joint_blwheel" type="revolute">
+      <pose>-0.25 0.575 -0.5 0 0 0</pose>
+      <parent>main</parent>
+      <child>blwheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>
+```
 
 First, it specify XML version.
 
-    ```XML
-    <sdf version="1.6">
-      <model name="car">
-        ...
-      </model>
-    </sdf>
-    ```
+```XML
+<sdf version="1.6">
+  <model name="car">
+    ...
+  </model>
+</sdf>
+```
 
 We put all tags inside sdf tag. Inside model tag we put tags that describe model. Inside model there is three main things (in addition to other things).
 
@@ -406,9 +406,9 @@ We put all tags inside sdf tag. Inside model tag we put tags that describe model
 2. Joints: Relations between links.
 3. Plugin: A library that can be used to control this model.
 
-    ```XML
-    <static>false</static>
-    ```
+```XML
+<static>false</static>
+```
 
 Starting with specify static tag to be false, if this model is static then it will be like a wall or ground that does not move.
 
