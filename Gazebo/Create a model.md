@@ -418,7 +418,13 @@ We put all tags inside sdf tag. Inside model tag we put tags that describe model
 
 Starting with specify static tag to be false, if this model is static then it will be like a wall or ground that does not move.
 
-Next moving to links, we define 6 links with their properties like pose, mass, inertia, collision and visual, define pose for each link so it will be in its specified location. Then we have joint tag to define the relation between main part and front part to be `fixed` (relative to each other). Define joints for 4 wheels to be `revolute` which means to be hinged around certain point and rotate about one axis.
+Next moving to links, we define 6 links with their properties like pose, mass, inertia, collision and visual, define pose (relative to model frame, which is center of main box) for each link so it will be in its specified location. 
+
+![Main part axes](../Images/Gazebo/Create%20a%20model/main_coordinate_system.png)
+
+Then we have joint tag to define the relation between main part and front part to be `fixed` (relative to each other). Define joints for 4 wheels to be `revolute` which means to be hinged around certain point and rotate about one axis. Pose of these joints is relative to child frame (X_c, Y_c, Z_c).
+
+![Wheel Joint axes](../Images/Gazebo/Create%20a%20model/wheel_joint_frame.png)
 
 To add this model to gazebo, you can move this file to `.gazebo/models` folder. `.gazebo` is a hidden folder in home directory. Then open Gazebo, go to insert tab and you will find your car model.
 
