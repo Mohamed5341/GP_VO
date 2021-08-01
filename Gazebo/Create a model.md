@@ -17,6 +17,8 @@ Here is an example of creating a model of a car. First, create a folder called `
     |   ├── model.config
     |   ├── car.sdf
 
+Using
+
     mkdir ~/car && cd ~/car
     touch model.config
     touch car.sdf
