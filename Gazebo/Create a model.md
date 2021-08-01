@@ -17,6 +17,10 @@ Here is an example of creating a model of a car. First, create a folder called `
 |   ├── model.config
 |   ├── car.sdf
 
+    mkdir ~/car && cd ~/car
+    touch model.config
+    touch car.sdf
+
 ![Model Directory](../Images/Gazebo/Create%20a%20model/model_folder.png)
 
 ## Configuration file
