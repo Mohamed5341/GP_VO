@@ -104,9 +104,9 @@ Here is the whole file.
     <static>false</static>
 
     <link name="main">
-
+      
       <pose>0 0 0 0 0 0</pose>
-
+      
       <inertial>
         <mass>1.0</mass>
         <inertia>
@@ -126,26 +126,26 @@ Here is the whole file.
           </box>
         </geometry>
       </collision>
-
+      
       <visual name="visual">
-
+        
         <geometry>
           <box>
             <size>1 1 1</size>
           </box>
         </geometry>
-
+        
         <material>
           <ambient>0.2 0 0 1</ambient>
         </material>
       </visual>
-
+    
     </link>
-
+    
     <link name="front">
-
+      
       <pose>0.75 0 -0.25 0 0 0</pose>
-
+      
       <inertial>
         <mass>.25</mass>
         <inertia>
@@ -165,26 +165,26 @@ Here is the whole file.
           </box>
         </geometry>
       </collision>
-
+      
       <visual name="visual">
-
+        
         <geometry>
           <box>
             <size>0.5 1 0.5</size>
           </box>
         </geometry>
-
+        
         <material>
           <ambient>0.2 0 0 1</ambient>
         </material>
       </visual>
-
+    
     </link>
-
+    
     <link name="frwheel">
-
+      
       <pose>0.75 -0.575 -0.5 -1.570791 0 0</pose>
-
+      
       <inertial>
         <mass>.2</mass>
         <inertia>
@@ -205,27 +205,27 @@ Here is the whole file.
           </cylinder>
         </geometry>
       </collision>
-
+      
       <visual name="visual">
-
+        
         <geometry>
           <cylinder>
             <radius>0.25</radius>
             <length>0.15</length>
           </cylinder>
         </geometry>
-
+        
         <material>
           <ambient>0 0 0.2 1</ambient>
         </material>
       </visual>
-
+    
     </link>
-
+    
     <link name="brwheel">
-
+      
       <pose>-0.25 -0.575 -0.5 -1.570791 0 0</pose>
-
+      
       <inertial>
         <mass>.2</mass>
         <inertia>
@@ -246,27 +246,27 @@ Here is the whole file.
           </cylinder>
         </geometry>
       </collision>
-
+      
       <visual name="visual">
-
+        
         <geometry>
           <cylinder>
             <radius>0.25</radius>
             <length>0.15</length>
           </cylinder>
         </geometry>
-
+        
         <material>
           <ambient>0 0 0.2 1</ambient>
         </material>
       </visual>
-
+    
     </link>
-
+    
     <link name="flwheel">
-
+      
       <pose>0.75 0.575 -0.5 1.570791 0 0</pose>
-
+      
       <inertial>
         <mass>.2</mass>
         <inertia>
@@ -287,27 +287,27 @@ Here is the whole file.
           </cylinder>
         </geometry>
       </collision>
-
+      
       <visual name="visual">
-
+        
         <geometry>
           <cylinder>
             <radius>0.25</radius>
             <length>0.15</length>
           </cylinder>
         </geometry>
-
+        
         <material>
           <ambient>0 0 0.2 1</ambient>
         </material>
       </visual>
-
+    
     </link>
-
+    
     <link name="blwheel">
-
+      
       <pose>-0.25 0.575 -0.5 1.570791 0 0</pose>
-
+      
       <inertial>
         <mass>.2</mass>
         <inertia>
@@ -328,63 +328,63 @@ Here is the whole file.
           </cylinder>
         </geometry>
       </collision>
-
+      
       <visual name="visual">
-
+        
         <geometry>
           <cylinder>
             <radius>0.25</radius>
             <length>0.15</length>
           </cylinder>
         </geometry>
-
+        
         <material>
           <ambient>0 0 0.2 1</ambient>
         </material>
       </visual>
-
+    
     </link>
-
+    
     <joint name="joint_2_boxes" type="fixed">
       <parent>main</parent>
       <child>front</child>
     </joint>
-
-
+    
+    
     <joint name="joint_frwheel" type="revolute">
-      <pose>0.75 -0.575 -0.5 0 0 0</pose>
+      <pose>0 0 0.075 0 0 0</pose>
       <parent>front</parent>
       <child>frwheel</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 0 1</xyz>
       </axis>
     </joint>
-
+    
     <joint name="joint_flwheel" type="revolute">
-      <pose>0.75 0.575 -0.5 0 0 0</pose>
+      <pose>0 0 0.075 0 0 0</pose>
       <parent>front</parent>
       <child>flwheel</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 0 1</xyz>
       </axis>
     </joint>
-
-
+    
+    
     <joint name="joint_brwheel" type="revolute">
-      <pose>-0.25 -0.575 -0.5 0 0 0</pose>
+      <pose>0 0 0.075 0 0 0</pose>
       <parent>main</parent>
       <child>brwheel</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 0 1</xyz>
       </axis>
     </joint>
-
+    
     <joint name="joint_blwheel" type="revolute">
-      <pose>-0.25 0.575 -0.5 0 0 0</pose>
+      <pose>0 0 0.075 0 0 0</pose>
       <parent>main</parent>
       <child>blwheel</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 0 1</xyz>
       </axis>
     </joint>
 
