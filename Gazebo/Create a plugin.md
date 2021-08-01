@@ -122,7 +122,7 @@ The required file after compilation is the file `.so` extension (Here, it is `li
 
 ## Adding plugin to model
 
-Now, we have [model] and [plugin]. We need to add plugin to the model. This is done by adding plugin tag inside model tag with file name.
+Now, we have [model](../src/models/car) and [plugin](../src/plugins/gazebo_car_plugin). We need to add plugin to the model. This is done by adding plugin tag inside model tag with file name.
 
 ```xml
 <?xml version='1.0'?>
