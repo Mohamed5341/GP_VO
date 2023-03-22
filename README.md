@@ -13,3 +13,4 @@ Here are steps to follow to run and understand project
    1. [PX4](./PX4/Install.md)
    2. [Gazebo](./Gazebo/Install.md)
    3. [ROS](./ROS/Install.md)
+2. [Run PX4, Gazebo and ROS](PX4/Install.md)

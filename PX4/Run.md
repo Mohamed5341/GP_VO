@@ -4,29 +4,27 @@ Before you run PX4 with Gazebo and ROS you need first to install [PX4](Install.m
 
 [PX4](https://docs.px4.io/master/en/simulation/ros_interface.html) mentioned how to run PX4 with Gazebo and ROS. First you need to run some commands in terminal.
 
-    cd PX4-Autopilot
-    DONT_RUN=1 make px4_sitl_default gazebo
-    source ~/catkin_ws/devel/setup.bash    # (optional)
-    source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default
-    export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)
-    export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/sitl_gazebo
+```
+cd PX4-Autopilot
+DONT_RUN=1 make px4_sitl_default gazebo
+source ~/catkin_ws/devel/setup.bash    # (optional if you have ROS worksapce)
+source Tools/simulation/gazebo-classic/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/simulation/gazebo-classic/sitl_gazebo-classic
+```
 
-These lines setup PX4 directory as ROS package so you can run nodes and launch files in it. Or instead of writing all these lines one at a time, you can write a script that contains these lines and just run this [script](../src/bash/setup_ros_pack.bash). First you need to copy it to `PX4-Autopilot`. Then you need to allow executing this script. Right click on script then select **Properties**
+These lines setup PX4 directory as ROS package so you can run nodes and launch files in it. Or instead of writing all these lines one at a time, you can write a script that contains these lines and just run this [script](../src/bash/setup_ros_pack.bash). First you need to copy it to `PX4-Autopilot`. Then you can run it normally.
 
-![Right click and select properties](../Images/PX4/Run/right_click_and_properties.png)
-
-From **Permission** tab select **Allow executing file as program**
-
-![Allow execution](../Images/PX4/Run/allow_executable.png)
-
-Now, you can run this script by using.
-
-    cd PX4-Autopilot
-    source setup_ros_pack.bash
+```
+cd PX4-Autopilot
+source setup_ros_pack.bash
+```
 
 For first time running these commands it will take some time because building process, but next times you run it, it will not take too much time. This could give some error because of missing python packages. Now you can run Gazebo simulator using:
 
-    roslaunch px4 posix_sitl.launch
+```
+roslaunch px4 posix_sitl.launch
+```
 
 ![Run Gazebo with iris](../Images/PX4/Run/gazebo_iris_run_command.png)
 
@@ -38,9 +36,11 @@ The easiest way to control vehicle is to use [QGroundControl](https://docs.qgrou
 
 ![QGroundControl software](../Images/PX4/Run/qgroundcontrol_with_gazebo.png)
 
-You can use QGroundControl as using it with real vehicles. To run it while using mavros to publish topics over ROS, use this launch file instead.
+You can use QGroundControl as using it with real vehicles. To run it while using mavros to publish topics over ROS, use this launch file instead. (But make sure you insatlled [mavros](http://docs.px4.io/main/en/ros/mavros_installation.html) ros package first).
 
-    roslaunch px4 mavros_posix_sitl.launch
+```
+roslaunch px4 mavros_posix_sitl.launch
+```
 
 ![Mavros topics](../Images/PX4/Run/mavros_topics.png)
 
@@ -50,7 +50,9 @@ To run SITL with different vehicles and different worlds, you can change default
 
 This is done by passing additional argument for launch command.
 
-    roslaunch px4 mavros_posix_sitl.launch vehicle:=<vehicle_name> world:=<world_name>
+```
+roslaunch px4 mavros_posix_sitl.launch vehicle:=<vehicle_name> world:=<world_name>
+```
 
 ![Plane Vehicle command](../Images/PX4/Run/sitl_gazebo_vehicle_plane.png)
 
