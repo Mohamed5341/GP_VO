@@ -2,10 +2,11 @@
 
 In Gazebo, everything in the world has a model (vehicle, ground, wall, tree, ...). Model can be created using Model Editor which is a GUI window in Gazebo, or by creating model files manually. Basically, model consists of two files: configuration and SDF file, that are grouped together in one folder. For example, for a plane it will be
 
-
-    ├── plane
-    |   ├── model.config
-    |   ├── plane.sdf
+```
+├── plane
+    ├── model.config
+    └── plane.sdf
+```
 
 Configuration file contains general information about model, like name, author, description, ..., while SDF file contains details about appearance and behavior of model in world, like size, apperance, shape, .... Both files are written in XML. which is some known tags with model data.
 
@@ -13,15 +14,18 @@ Configuration file contains general information about model, like name, author, 
 
 Here is an example of creating a model of a car. First, create a folder called `car` and create two files inside it called `model.config` and `car.sdf`.
 
-    ├── car
-    |   ├── model.config
-    |   ├── car.sdf
+```
+├── car
+    ├── model.config
+    └── car.sdf
+```
 
 Using
-
-    mkdir ~/car && cd ~/car
-    touch model.config
-    touch car.sdf
+```
+mkdir ~/car && cd ~/car
+touch model.config
+touch car.sdf
+```
 
 ![Model Directory](../Images/Gazebo/Create%20a%20model/model_folder.png)
 
@@ -405,10 +409,10 @@ First, it specify XML version.
 We put all tags inside sdf tag. Inside model tag we put tags that describe model. Inside model there is three main things (in addition to other things).
 
 1. Links: each part of model is called link, for example car here has 6 components (2 boxes and 4 cylinders) each one is a link.
-    1.1. Collision: Describes the shape of link that collide with other.
-    1.2. Visual: Describe the shape that appears on screen.
-    1.3. Inertia: Inertia values for Link.
-    1.4. Sensor: If this link is a sensor, describe this sensor characteristics.
+    1. Collision: Describes the shape of link that collide with other.
+    2. Visual: Describe the shape that appears on screen.
+    3. Inertia: Inertia values for Link.
+    4. Sensor: If this link is a sensor, describe this sensor characteristics.
 2. Joints: Relations between links.
 3. Plugin: A library that can be used to control this model.
 

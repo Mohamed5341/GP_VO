@@ -4,21 +4,27 @@ Gazebo simulator provides user with the ability to write plugins, which are piec
 
 Before you write your plugin you need first to download developer package for gazebo.
 
-    sudo apt-get install libgazebo9-dev
+```
+sudo apt-get install libgazebo9-dev
+```
 
 # Create a plugin
 
-Here is an example of plugin with [car model](Create a model.md). Create a folder `gazebo_car_plugin` that will contain plugin files. For a plugin, you need C++ file and cmake file.
+Here is an example of plugin with [car model](Create%20a%20model.md). Create a folder `gazebo_car_plugin` that will contain plugin files. For a plugin, you need C++ file and cmake file.
 
-    ├── gazebo_car_plugin
-    |   ├── car_model_control.cc
-    |   ├── CMakeLists.txt
+```
+├── gazebo_car_plugin
+    ├── car_model_control.cc
+    └── CMakeLists.txt
+```
 
 Using
 
-    mkdir ~/gazebo_car_plugin && cd ~/gazebo_car_plugin
-    touch car_model_control.cc
-    touch CMakeLists.txt
+```
+mkdir ~/gazebo_car_plugin && cd ~/gazebo_car_plugin
+touch car_model_control.cc
+touch CMakeLists.txt
+```
 
 ![Plugin files](../Images/Gazebo/Create%20a%20plugin/create_plugin_files.png)
 
@@ -137,10 +143,17 @@ Now, we have [model](../src/models/car) and [plugin](../src/plugins/gazebo_car_p
 
 Before we run gazebo and add model, we need to add location of our file to Gazebo path.
 
-    export GAZEBO_PLUGIN_PATH=$HOME/gazebo_car_plugin/build:$GAZEBO_PLUGIN_PATH
+```
+export GAZEBO_PLUGIN_PATH=$HOME/gazebo_car_plugin/build:$GAZEBO_PLUGIN_PATH
+```
 
 Then you can run gazebo.
 
-    gazebo
+```
+gazebo
+```
 
 And add model to gazebo. As soon you add model to simulator it starts to move. You can find this code [here](../src/plugins/gazebo_car_plugin)
+
+
+<!--add a video to plugin while working-->

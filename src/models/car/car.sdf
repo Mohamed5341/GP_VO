@@ -289,5 +289,7 @@
       </axis>
     </joint>
 
+    <plugin name="car_control" filename="libcar_control_plugin.so"/>
+
   </model>
 </sdf>
