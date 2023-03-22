@@ -15,5 +15,6 @@ Here are steps to follow to run and understand project
    3. [ROS](./ROS/Install.md)
 2. [Run PX4, Gazebo and ROS](PX4/Install.md)
 3. Gazebo
-   1. [Create a Model](Gazebo/Create%20a%20model.md)
-   2. [Create a Plugin](Gazebo/Create%20a%20plugin.md)
+   1. [Create a Model](./Gazebo/Create%20a%20model.md)
+   2. [Create a Plugin](./Gazebo/Create%20a%20plugin.md)
+   3. [Create a camera model](./Gazebo/Create%20a%20Camera.md)
