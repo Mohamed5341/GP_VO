@@ -155,5 +155,4 @@ gazebo
 
 And add model to gazebo. As soon you add model to simulator it starts to move. You can find this code [here](../src/plugins/gazebo_car_plugin)
 
-
-<!--add a video to plugin while working-->
+![gazebo_plugin](https://user-images.githubusercontent.com/52247487/226788221-a520c6bb-dd59-42d5-884e-0823ceaab244.gif)
