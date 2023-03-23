@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="standard_vtol_with_camera">
+    
+    <include>
+        <uri>model://standard_vtol</uri>
+    </include>
+
+    <include>
+        <uri>model://camera</uri>
+        <pose>0 0 0 0 1.570796 0</pose>
+    </include>
+
+    <joint name="uav_cam_joint" type="fixed">
+        <parent>standard_vtol::base_link</parent>
+        <child>camera::camera_link</child>
+    </joint>
+    
+  </model>
+</sdf>
