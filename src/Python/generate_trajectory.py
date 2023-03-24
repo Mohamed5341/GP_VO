@@ -2,7 +2,7 @@
 
 import math
 
-file_name = "moving_camera.sdf"
+file_name = "../models/moving_camera/moving_camera.sdf"
 
 data = """<?xml version="1.0" ?>
 <sdf version="1.6">
@@ -25,19 +25,22 @@ end_file = """
 
 num_of_points = 50
 
-z_locations = [1, 1.33, 1.66, 2, 2.33]
+z_locations = [1, 1.66, 2, 2.33]
 x = [math.cos(2*math.pi*i/num_of_points) for i in range(0, num_of_points)]
-y = [math.sin(2*math.pi*i/num_of_points) for i in range(0, num_of_points)]
+y = [0.5*math.sin(2*math.pi*i/num_of_points) for i in range(0, num_of_points)]
 
 x.insert(0, 0)
 y.insert(0, 0)
 
-time_i = -2
-js = [j*0.1 for j in [1, 5, 10, 20]]
+time_i = 120
+js = [j*0.08 for j in [1, 5, 15, 20]]
+
+i_z = 0
 
 for z in z_locations:
+    i_z += 1
     time_i += 2
-    for j in js:
+    for j in js[len(js)-i_z::-1]:
         dx = x[0]*j
         dy = y[0]*j
         dz = z

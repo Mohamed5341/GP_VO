@@ -20,5 +20,5 @@
     </include>
 
     <!-- camera calibration -->
-    <node name="cam_cal" pkg="camera_calibration" type="cameracalibrator.py" args="--size 8x6 --square 0.108 image:=/uav/camera1/image_raw camera:=/uav/camera1"/>
+    <node name="cam_cal" pkg="camera_calibration" type="cameracalibrator.py" output="screen" args="--size 8x6 --square 0.108 image:=/uav/camera1/image_raw camera:=/uav/camera1"/>
 </launch>
