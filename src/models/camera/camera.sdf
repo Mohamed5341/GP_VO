@@ -19,27 +19,27 @@
               <near>0.1</near>
               <far>100</far>
             </clip>
+
+            <distortion>
+              <k1>-0.28340811217029355</k1>
+              <k2>0.07395907389290132</k2>
+              <k3>0.0</k3>
+              <p1>0.00019359502856909603</p1>
+              <p2>1.7618711454538528e-05</p2>
+            </distortion>
+
+            <lens>
+              <type>gnomonical</type>
+              <scale_to_hfov>false</scale_to_hfov>
+              <intrinsics>
+                <fx>458.6548807207614</fx>
+                <fy>457.2966964634893</fy>
+                <cx>367.2158039615726</cx>
+                <cy>248.37534060980727</cy>
+                <s>0.0</s>
+              </intrinsics>
+            </lens>
           </camera>
-
-          <distortion>
-            <k1>-0.28340811217029355</k1>
-            <k2>0.07395907389290132</k2>
-            <k3>0.0</k3>
-            <p1>0.00019359502856909603</p1>
-            <p2>1.7618711454538528e-05</p2>
-          </distortion>
-
-          <lens>
-            <type>gnomonical</type>
-            <scale_to_hfov>false</scale_to_hfov>
-            <intrinsics>
-              <fx>458.6548807207614</fx>
-              <fy>457.2966964634893</fy>
-              <cx>367.2158039615726</cx>
-              <cy>248.37534060980727</cy>
-              <s>0.0</s>
-            </intrinsics>
-          </lens>
           
           <always_on>1</always_on>
           <update_rate>30</update_rate>
