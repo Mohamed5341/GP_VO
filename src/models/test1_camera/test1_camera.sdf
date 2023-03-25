@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <actor name="test1_camera">
+    <include>
+        <uri>model://camera</uri>
+        <pose>0 0 0 0 1.570796 0</pose>
+    </include>
+    <script>
+        <loop>true</loop>
+        <delay_start>0.00000</delay_start>
+        <trajectory id="0" type="square">
+            <waypoint>
+                <time>0.00</time>
+                <pose>1.00 1.00 3.00 0 0 0</pose>
+            </waypoint>
+            <waypoint>
+                <time>3.00</time>
+                <pose>1.00 -1.00 3.00 0 0 0</pose>
+            </waypoint>
+            <waypoint>
+                <time>6.00</time>
+                <pose>-1.00 -1.00 3.00 0 0 0</pose>
+            </waypoint>
+            <waypoint>
+                <time>9.00</time>
+                <pose>-1.00 1.00 3.00 0 0 0</pose>
+            </waypoint>
+            <waypoint>
+                <time>12.00</time>
+                <pose>1.00 1.00 3.00 0 0 0</pose>
+            </waypoint>
+            
+        </trajectory>
+    </script>
+  </actor>
+</sdf>

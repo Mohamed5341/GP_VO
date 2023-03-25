@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="cam_name" default="uav_custom_camera"/>
+    <arg name="calib_file" default="$(find svo_ros)/param/calib/$(arg cam_name).yaml"/>
+
+    <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/test1.world"/>
+
+    <arg name="record" default="false"/>
+    <arg name="bags_dir" default="~/bags"/>
+    
+    <!-- gazebo configs -->
+    <arg name="gui" default="true"/>
+    <arg name="debug" default="false"/>
+    <arg name="verbose" default="false"/>
+    <arg name="paused" default="false"/>
+    <arg name="respawn_gazebo" default="false"/>
+    
+    <!-- Gazebo sim -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="gui" value="$(arg gui)"/>
+        <arg name="world_name" value="$(arg world)"/>
+        <arg name="debug" value="$(arg debug)"/>
+        <arg name="verbose" value="$(arg verbose)"/>
+        <arg name="paused" value="$(arg paused)"/>
+        <arg name="respawn_gazebo" value="$(arg respawn_gazebo)"/>
+    </include>
+
+    <!-- SVO node -->
+    <node pkg="svo_ros" type="svo_node" name="svo" clear_params="true" output="screen" >
+
+        <!-- Camera topic to subscribe to -->
+        <param name="cam0_topic" value="/uav/camera1/image_raw" type="str" />
+
+        <!-- Camera calibration file -->
+        <param name="calib_file" value="$(arg calib_file)" />
+
+        <!--Parameters-->
+        <rosparam file="$(find svo_ros)/param/pinhole.yaml" />
+        <param name="map_scale" value="1" />
+        
+        <!-- Loop closure detection parameters -->
+        <param name="runlc" value="false" />
+        <!--<rosparam file="$(find svo_ros)/param/loop_closing.yaml" />-->
+        <!--<param name="voc_path" value="$(find svo_online_loopclosing)/vocabularies/" type="str" />-->
+
+    </node>
+
+    <!-- RVIZ + SVO GUI -->
+    <node name="vis" pkg="rviz" type="rviz" args=" -d $(find svo_ros)/rviz_config.rviz" />
+    <node name="svo_gui" pkg="rqt_gui" type="rqt_gui" args="-s rqt_svo.svo.Svo --args --topic svo" />
+
+    <!-- Record data -->
+    <node pkg="rosbag" type="record" name="rosbag_record_diag" args="/gazebo/model_states /svo/pose_cam/0" if="$(arg record)"/>
+</launch>

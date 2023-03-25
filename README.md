@@ -19,3 +19,4 @@ Here are steps to follow to run and understand project
    2. [Create a Plugin](./Gazebo/Create%20a%20plugin.md)
    3. [Create a camera model](./Gazebo/Create%20a%20Camera.md)
    4. [Create a PX4 VTOL model with camera](./Gazebo/Create%20vehicle%20with%20camera.md)
+4. [SVO Getting Started](./SVO/Getting%20started.md)

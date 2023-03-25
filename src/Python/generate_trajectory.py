@@ -27,12 +27,12 @@ num_of_points = 50
 
 z_locations = [1, 1.66, 2, 2.33]
 x = [math.cos(2*math.pi*i/num_of_points) for i in range(0, num_of_points)]
-y = [0.5*math.sin(2*math.pi*i/num_of_points) for i in range(0, num_of_points)]
+y = [0.7*math.sin(2*math.pi*i/num_of_points) for i in range(0, num_of_points)]
 
 x.insert(0, 0)
 y.insert(0, 0)
 
-time_i = 120
+time_i = 0
 js = [j*0.08 for j in [1, 5, 15, 20]]
 
 i_z = 0
