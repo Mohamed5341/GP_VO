@@ -13,7 +13,7 @@ Here are steps to follow to run and understand project
    1. [PX4](./PX4/Install.md)
    2. [Gazebo](./Gazebo/Install.md)
    3. [ROS](./ROS/Install.md)
-2. [Run PX4, Gazebo and ROS](PX4/Install.md)
+2. [Run PX4, Gazebo and ROS](PX4/Run.md)
 3. Gazebo
    1. [Create a Model](./Gazebo/Create%20a%20model.md)
    2. [Create a Plugin](./Gazebo/Create%20a%20plugin.md)
