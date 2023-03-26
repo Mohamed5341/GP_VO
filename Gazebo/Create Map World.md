@@ -6,4 +6,7 @@ When UAV flies and uses downward camera to estimate its position. It would be gr
 
 Testing vehicle inside this world.
 
-<!-- add video to vehicle -->
+
+
+https://user-images.githubusercontent.com/52247487/227757639-af72764d-abaf-4a8d-8625-d19c53700465.mp4
+
