@@ -60,4 +60,4 @@ source setup_ros_pack.bash
 roslaunch px4 mavros_posix_sitl.launch vehicle:=standard_vtol_with_camera
 ```
 
-<!--add video of running vehicle-->
+https://user-images.githubusercontent.com/52247487/227757585-f0d7e631-3c7b-488a-bfb2-921df4a931e8.mp4
